@@ -46,11 +46,12 @@ public class ProductServiceImpl implements ProductService {
 
    
     @Override
-    public Void deleteProduct(Long id) {
+    public void deleteProduct(Long id) {
          List<Long>ids = new ArrayList<>();
          ids.add(id);
          var product = getAllProductsByIds(ids);
          repository.deleteInBatch(product);
+          
     }
 
   
